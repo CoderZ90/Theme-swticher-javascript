@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Import Google Fonts - Poppins */
+/* Darkmode Color - #9dabff */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+.container {
+  min-height: 100vh;
+}
+nav {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  color: #4561ff;
+  margin-left: 8%;
+  font-size: 28px;
+}
+.toggler {
+  position: relative;
+  /* we need to give position relative so that we can use psuedo elements which are ::before and ::after */
+  margin-right: 10%;
+  -webkit-appearance: none;
+  background: #4561ff;
+  width: 80px;
+  height: 30px;
+  /*  b*/
+  border: none;
+  outline: none;
+  border-radius: 100px;
+}
+.toggler::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  border-radius: 50%;
+  cursor: pointer;
+  /* Transtion - requested by CristoferK */
+  transition: 0.4s ease;
+}
+.main {
+  margin-top: 80px;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.main h2 {
+  font-size: 60px;
+  color: #222;
+}
+.main h2 span {
+  color: #4561ff;
+}
+p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+p span {
+  color: #4561ff;
+  font-weight: 500;
+}
+.btn {
+  margin-top: 30px;
+  padding: 15px 80px;
+  background: #111317;
+  color: #fff;
+  border-radius: 100px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+/* Toggler stylings */
+.toggler.toggler-active {
+  /* background: red; */
+  background: #fff;
+}
+.toggler.toggler-active::after {
+  background: #9dabff;
+  left: 65%;
+}
+/* Darkmode CSS Styling */
+/* when we click on the toggler add class to body */
+body.active {
+  background-color: #222;
+}
+body.active nav h2 {
+  color: #fff;
+}
+body.active .main h2 {
+  color: #f1f1f1;
+}
+body.active .main h2 span {
+  color: #9dabff;
+}
+body.active .main p {
+  color: #fff;
+}
+body.active .main p span {
+  color: #9dabff;
+}
+body.active .btn {
+  background-color: #9dabff;
+  color: #fff;
+}

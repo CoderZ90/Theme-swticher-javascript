@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Coding by CodingFire - youtube.com/codingfire -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Responsive Javascript Theme Switcher | CodingFire</title>
+</head>
+<body>
+  <!-- Pro Tip You can add as multiple themes as possible and you can change anything by just watching this video -->
+  <div class="container">
+    <nav>
+      <h2 class="logo">Logo</h2>
+      <input type="checkbox" class="toggler">
+    </nav>
+    <div class="main">
+      <h2>Create A Theme Switcher Using <br> <span>HTML, CSS & Javascript</span></h2>
+      <p>Changes <span>Themes</span> Using Javascript</p>
+      <button class="btn">More Themes</button>
+    </div>
+  </div>
+  <!-- Javascript -->
+  <script>
+    const toggler = document.querySelector('.toggler');
+    const body = document.querySelector('body')
+    // when we click on the toggler
+    toggler.addEventListener('click', () => {
+      toggler.classList.toggle('toggler-active');
+      body.classList.toggle('active');
+    })
+  </script>
+
+</body>
+</html>
